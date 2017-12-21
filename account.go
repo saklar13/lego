@@ -31,7 +31,7 @@ func NewAccount(email string, conf *Configuration) *Account {
 	var privKey crypto.PrivateKey
 	if _, err := os.Stat(accKeyPath); os.IsNotExist(err) {
 
-		logger().Printf("No key found for account %s. Generating a curve P384 EC key.", email)
+		logger().Printf("No key found for account %s. Generating a curve P256 EC key.", email)
 		privKey, err = generatePrivateKey(accKeyPath)
 		if err != nil {
 			logger().Fatalf("Could not generate RSA private account key for account %s: %v", email, err)

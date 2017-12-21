@@ -14,7 +14,7 @@ import (
 
 func generatePrivateKey(file string) (crypto.PrivateKey, error) {
 
-	privateKey, err := ecdsa.GenerateKey(elliptic.P384(), rand.Reader)
+	privateKey, err := ecdsa.GenerateKey(elliptic.P256(), rand.Reader)
 	if err != nil {
 		return nil, err
 	}
